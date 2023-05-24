@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidapp.taskmaster.R;
 
@@ -27,7 +28,10 @@ public class AddTaskActivity extends AppCompatActivity {
         submitButton.setOnClickListener(v -> {
             Log.v(TAG, "Submit clicked");
 
-            ((TextView) findViewById(R.id.submitText)).setText(R.string.submitted_confirmation);
+//            TextView addTaskSubmitted = ((TextView) findViewById(R.id.submitText));
+//            addTaskSubmitted.setText(R.string.submitted_confirmation);
+
+            Toast.makeText(AddTaskActivity.this, "Task saved!", Toast.LENGTH_SHORT).show();
         });
 
     }
