@@ -1,6 +1,8 @@
 package com.androidapp.taskmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +17,11 @@ import com.androidapp.taskmaster.activities.AddTaskActivity;
 import com.androidapp.taskmaster.activities.AllTasksActivity;
 import com.androidapp.taskmaster.activities.SettingsActivity;
 import com.androidapp.taskmaster.activities.TaskDetailsActivity;
+import com.androidapp.taskmaster.adapters.TasksRecycleViewAdapter;
+import com.androidapp.taskmaster.models.Task;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final String PRODUCT_NAME_TAG = "productName";
@@ -30,10 +37,19 @@ public class MainActivity extends AppCompatActivity {
         //3. Attach fallback function to onClick method
         // 4. callback logic
 
+        List<Task> tasks = new ArrayList<>();
+        tasks.add(new Task("dishes"));
+        tasks.add(new Task("walk dog"));
+        tasks.add(new Task("trash"));
+        tasks.add(new Task("errands"));
+        tasks.add(new Task("laundry"));
+
+
         setUpAddTaskButton();
         setUpAllTasksButton();
         setUpSettingsButton();
-        setUpHWButton(preferences);
+//        setUpHWButton(preferences);
+        setUpRecycleView(tasks);
 
     }
 
@@ -69,23 +85,41 @@ public class MainActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.mainActivityUserNameView)).setText(userName + "'s tasks");
     }
 
-    public void setUpHWButton (SharedPreferences preferences) {
-        Button gotToHWButton = (Button) findViewById(R.id.mainActivityHWButton);
 
+    public void setUpRecycleView (List<Task> tasks) {
+        RecyclerView tasksRecycleView = (RecyclerView) findViewById(R.id.mainActivityTasksListRecycleView);
 
-        gotToHWButton.setOnClickListener(v -> {
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
 
-//            String  buttonTaskText = gotToHWButton.getText().toString();
-//
-//
-//            SharedPreferences.Editor preferenceEditor = preferences.edit();
-//            preferenceEditor.putString(PRODUCT_NAME_TAG, buttonTaskText);
-//            preferenceEditor.apply();
+        // For later, if you want a horizontal list:
+        //((LinearLayoutManager)layoutManager).setOrientation(LinearLayoutManager.HORIZONTAL);
 
-            Intent goToHWIntent = new Intent(MainActivity.this, TaskDetailsActivity.class);
-            startActivity(goToHWIntent);
-        });
+        tasksRecycleView.setLayoutManager(layoutManager);
+
+        //Set adapter
+        TasksRecycleViewAdapter adapter = new TasksRecycleViewAdapter();
+        tasksRecycleView.setAdapter(adapter);
+
 
     }
+
+//    public void setUpHWButton (SharedPreferences preferences) {
+//        Button gotToHWButton = (Button) findViewById(R.id.mainActivityHWButton);
+//
+//
+//        gotToHWButton.setOnClickListener(v -> {
+//
+////            String  buttonTaskText = gotToHWButton.getText().toString();
+////
+////
+////            SharedPreferences.Editor preferenceEditor = preferences.edit();
+////            preferenceEditor.putString(PRODUCT_NAME_TAG, buttonTaskText);
+////            preferenceEditor.apply();
+//
+//            Intent goToHWIntent = new Intent(MainActivity.this, TaskDetailsActivity.class);
+//            startActivity(goToHWIntent);
+//        });
+//
+//    }
 
 }

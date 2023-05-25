@@ -19,4 +19,6 @@
     <string name="homework">homework</string>
     <string name="walk_dog">walk dog</string>
     <string name="gym">gym</string>
+    <string name="blank_task_name">blank task\n</string>
+    <string name="task_frag_text">no task</string>
 </resources>
