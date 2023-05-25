@@ -25,7 +25,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
         super.onResume();
 
         preferences = getSharedPreferences(getPackageName() + "_preferences", Context.MODE_PRIVATE);
-        String task = preferences.getString(MainActivity.PRODUCT_NAME_TAG, "No task");
+        String task = preferences.getString(MainActivity.TASK_NAME_TAG, "No task");
         ((TextView) findViewById(R.id.taskDetailsActivityInputName)).setText(task);
     }
 }

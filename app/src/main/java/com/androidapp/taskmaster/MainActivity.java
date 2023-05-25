@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String PRODUCT_NAME_TAG = "productName";
+    public static final String TASK_NAME_TAG = "taskName";
     SharedPreferences preferences;
 
     @Override
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         tasksRecycleView.setLayoutManager(layoutManager);
 
         //Set adapter
-        TasksRecycleViewAdapter adapter = new TasksRecycleViewAdapter(tasks);
+        TasksRecycleViewAdapter adapter = new TasksRecycleViewAdapter(tasks, this);
         tasksRecycleView.setAdapter(adapter);
 
 
