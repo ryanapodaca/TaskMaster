@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         tasksRecycleView.setLayoutManager(layoutManager);
 
         //Set adapter
-        TasksRecycleViewAdapter adapter = new TasksRecycleViewAdapter();
+        TasksRecycleViewAdapter adapter = new TasksRecycleViewAdapter(tasks);
         tasksRecycleView.setAdapter(adapter);
 
 
