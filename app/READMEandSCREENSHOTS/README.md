@@ -19,3 +19,13 @@ change their user name.  We also now have a task description page which will soo
 ![pic4](pic4.png)
 ![pic5](pic5.png)
 
+
+24 May
+
+Today we added a working recycle view. It dynamically renders items like a conveyor belt.  You can also 
+click on the items and get taken to the task details page.  
+
+![p1](p1.png)
+![p2](p2.png)
+![p3](p3.png)
+

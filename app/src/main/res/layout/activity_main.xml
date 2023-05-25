@@ -14,17 +14,17 @@
         android:text="@string/all_tasks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toEndOf="@+id/addTaskButton"
         app:layout_constraintTop_toTopOf="@+id/addTaskButton"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintVertical_bias="0.413" />
 
     <Button
         android:id="@+id/addTaskButton"
         android:layout_width="97dp"
         android:layout_height="63dp"
         android:layout_marginStart="52dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="44dp"
         android:text="@string/add_task"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -33,10 +33,10 @@
         android:id="@+id/mainActivityUserNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="52dp"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,39 +60,13 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/ic_menu_manage" />
 
-    <Button
-        android:id="@+id/mainActivityHWButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="241dp"
-        android:layout_marginBottom="442dp"
-        android:text="@string/homework"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="298dp"
-        android:layout_marginBottom="385dp"
-        android:text="@string/walk_dog"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="354dp"
-        android:layout_marginBottom="329dp"
-        android:text="@string/gym"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainActivityTasksListRecycleView"
+        android:layout_width="246dp"
+        android:layout_height="412dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginBottom="160dp"
+        android:background="#E6DBDB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
