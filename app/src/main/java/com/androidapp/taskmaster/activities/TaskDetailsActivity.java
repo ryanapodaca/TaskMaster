@@ -13,6 +13,7 @@ import com.androidapp.taskmaster.R;
 
 public class TaskDetailsActivity extends AppCompatActivity {
     public static final String TASK_Title_TAG = "taskName";
+    public static final String TASK_Body_TAG = "taskBody";
     SharedPreferences preferences;
 
     @Override
@@ -25,6 +26,11 @@ public class TaskDetailsActivity extends AppCompatActivity {
 
         TextView taskDetailsTextView = findViewById(R.id.taskDetailsActivityInputName);
         taskDetailsTextView.setText(taskTitle);
+
+        String taskBody = intent.getStringExtra(TaskDetailsActivity.TASK_Body_TAG);
+
+        TextView taskDetailsBodyView = findViewById(R.id.taskDetailsTaskBodyTextView);
+        taskDetailsBodyView.setText(taskBody);
 
 
 
