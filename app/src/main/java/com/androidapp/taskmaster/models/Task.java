@@ -6,19 +6,26 @@ public class Task {
 
     String body;
 
-    public enum TaskState {
-        NEW("new"),
-        ASSIGNED("assigned"),
-        INPROGRESS("in progress"),
-        COMPLETE("complete");
-
-        public String state;
-        TaskState(String state) {
-        }
-        public String getState() {
-            return state;
-        }
-    }
+//    public enum TaskState {
+//        NEW("new"),
+//        ASSIGNED("assigned"),
+//        INPROGRESS("in progress"),
+//        COMPLETE("complete");
+//
+//        private final String taskState;
+//        TaskState(String state) {
+//        }
+//        public String getState() {
+//            return taskState;
+//        }
+//
+//        public static TaskState fromString (String possibleTaskState) {
+//            for (TaskState type : possibleTaskState.values())
+//                if
+//
+//            return type;
+//        }
+//    }
 
     public Task(String title) {
         this.title = title;

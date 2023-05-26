@@ -1,6 +1,7 @@
 package com.androidapp.taskmaster.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -11,6 +12,7 @@ import com.androidapp.taskmaster.MainActivity;
 import com.androidapp.taskmaster.R;
 
 public class TaskDetailsActivity extends AppCompatActivity {
+    public static final String TASK_Title_TAG = "taskName";
     SharedPreferences preferences;
 
     @Override
@@ -18,14 +20,21 @@ public class TaskDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_details);
 
+        Intent intent = getIntent();
+        String taskTitle = intent.getStringExtra(TaskDetailsActivity.TASK_Title_TAG);
+
+        TextView taskDetailsTextView = findViewById(R.id.taskDetailsActivityInputName);
+        taskDetailsTextView.setText(taskTitle);
+
+
 
     }
 
     protected void onResume () {
         super.onResume();
 
-        preferences = getSharedPreferences(getPackageName() + "_preferences", Context.MODE_PRIVATE);
-        String task = preferences.getString(MainActivity.TASK_NAME_TAG, "No task");
-        ((TextView) findViewById(R.id.taskDetailsActivityInputName)).setText(task);
+//        preferences = getSharedPreferences(getPackageName() + "_preferences", Context.MODE_PRIVATE);
+//        String task = preferences.getString(TaskDetailsActivity.TASK_Title_TAG, "No task");
+//        ((TextView) findViewById(R.id.taskDetailsActivityInputName)).setText(task);
     }
 }

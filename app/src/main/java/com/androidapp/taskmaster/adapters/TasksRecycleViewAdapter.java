@@ -37,7 +37,7 @@ public class TasksRecycleViewAdapter extends RecyclerView.Adapter<TasksRecycleVi
 
     @Override
     public void onBindViewHolder(@NonNull TasksListViewHolder holder, int position) {
-        TextView taskFragmentTextView = (TextView) holder.itemView.findViewById(R.id.taskfragmentTextView);
+        TextView taskFragmentTextView = holder.itemView.findViewById(R.id.taskfragmentTextView);
         String taskTitle = tasks.get(position).getTitle();
         String taskFragmentText = position + "." + taskTitle;
         taskFragmentTextView.setText(taskFragmentText);
@@ -45,7 +45,7 @@ public class TasksRecycleViewAdapter extends RecyclerView.Adapter<TasksRecycleVi
         //Create on-click listener
         taskFragmentTextView.setOnClickListener(v -> {
             Intent goToTaskDetailsIntent = new Intent(callingActivity, TaskDetailsActivity.class);
-            goToTaskDetailsIntent.putExtra(MainActivity.TASK_NAME_TAG, taskTitle);
+            goToTaskDetailsIntent.putExtra(TaskDetailsActivity.TASK_Title_TAG, taskTitle);
             callingActivity.startActivity(goToTaskDetailsIntent);
 
         });
