@@ -29,3 +29,12 @@ click on the items and get taken to the task details page.
 ![p2](p2.png)
 ![p3](p3.png)
 
+25 May 23
+
+Today we connected Room db to our app.  Now the recycle view renders
+information from the add task form.  You can also see the titke and body 
+of the task on the task details page.
+
+![s1](s1.png)
+![s2](s2.png)
+![s3](s3.png)
