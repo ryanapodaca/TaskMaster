@@ -32,9 +32,17 @@ click on the items and get taken to the task details page.
 25 May 23
 
 Today we connected Room db to our app.  Now the recycle view renders
-information from the add task form.  You can also see the titke and body 
+information from the add task form.  You can also see the title and body 
 of the task on the task details page.
 
 ![s1](s1.png)
 ![s2](s2.png)
 ![s3](s3.png)
+
+1 June 23
+
+We've also added a few more espresso tests to Task Master.  The first test demonstrates that all functional
+buttons actually exist in there appropriate locations.  The next test ensures that the task activity 
+information persists from the main activity to details activity render.  The last ensures that the user
+defined username in settings persists in the main activity.  All examples can be seen in the pics above.  
+
